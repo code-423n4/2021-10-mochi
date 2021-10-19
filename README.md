@@ -87,17 +87,17 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 This repo will be made public before the start of the contest. (C4 delete this line when made public)
 
 ## Contents
-- [Mochi.fi Contest Details](#-Mochifi-Contest-Details-)
-- [Contest Scope](#-Contest-Scope-)
-- [Protocol Overview](#-Protocol-Overview)
-- [Smart Contract Overview](#-Smart-Contract-Overview)
-    - [Core](#-Core)
-    - [CSSR](#-CSSR)
-    - [Router](#🛤-Router) 
-    - [Potential Concerns](#-Potential-Concerns)
+- [Mochi.fi Contest Details](#bulb-mochifi-contest-details)
+- [Contest Scope](#runner-contest-scope)
+- [Protocol Overview](#bookmark_tabs-protocol-overview)
+- [Smart Contract Overview](#mag-smart-contract-overview)
+    - [Core](#globe_with_meridians-core)
+    - [CSSR](#money_with_wings-cssr)
+    - [Router](#-router) 
+    - [Potential Concerns](#fire-potential-concerns)
     - [Known Issues](#-Known-Issues)
-    - [How to setup the contract dev environment](#-How-to-setup-the-contract-dev-environment)
-    - [How to run tests](#-How-to-run-tests)
+    - [How to setup the contract dev environment](#desktop_computer-how-to-setup-the-contract-dev-environment)
+    - [How to run tests](#question-how-to-run-tests)
 
 ## :bulb: Mochi.fi Contest Details 
 - $100,000 main award pot
