@@ -95,7 +95,7 @@ This repo will be made public before the start of the contest. (C4 delete this l
     - [CSSR](#money_with_wings-cssr)
     - [Router](#-router) 
     - [Potential Concerns](#fire-potential-concerns)
-    - [Known Issues](#-Known-Issues)
+    - [Known Issues](#closed_book-known-issues)
     - [How to setup the contract dev environment](#desktop_computer-how-to-setup-the-contract-dev-environment)
     - [How to run tests](#question-how-to-run-tests)
 
