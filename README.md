@@ -121,7 +121,7 @@ This repo will be made public before the start of the contest. (C4 delete this l
 | Dutch Auction | the bidding starts at the highest asking amount and gets lowered until the winning bet |
 
 ## :runner: Contest Scope
-This contest is open for two weeks to give wardens time to understand the protocol properly. Submissions can only be made in the second week of the contest. Representatives from Mochi.fi will be available in the Code Arena Discord to answer any questions during the contest period. The focus main will be to try and find any logic errors and vulnerabilities. The end goal is to find ways to optimize ​gas costs for users interacting with the protocol and specifically with the Mochi CSSR as outlined [here](#-CSSR)
+This contest is open for two weeks to give wardens time to understand the protocol properly. Submissions can only be made in the second week of the contest. Representatives from Mochi.fi will be available in the Code Arena Discord to answer any questions during the contest period. The main focus will be to find bugs, logic errors and vulnerabilities. Another important goal is to find ways to optimise ​gas costs for users interacting with the protocol and specifically with the Mochi CSSR as outlined [here](#-CSSR).
 
 ## :bookmark_tabs: Protocol Overview
 
