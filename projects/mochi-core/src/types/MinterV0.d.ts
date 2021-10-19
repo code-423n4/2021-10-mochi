@@ -21,7 +21,6 @@ import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
 interface MinterV0Interface extends ethers.utils.Interface {
   functions: {
-    "addFactory(address)": FunctionFragment;
     "addMinter(address)": FunctionFragment;
     "engine()": FunctionFragment;
     "factories(uint256)": FunctionFragment;
@@ -29,11 +28,9 @@ interface MinterV0Interface extends ethers.utils.Interface {
     "isMinter(address)": FunctionFragment;
     "isVault(address)": FunctionFragment;
     "mint(address,uint256)": FunctionFragment;
-    "removeFactory(uint256)": FunctionFragment;
     "removeMinter(address)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "addFactory", values: [string]): string;
   encodeFunctionData(functionFragment: "addMinter", values: [string]): string;
   encodeFunctionData(functionFragment: "engine", values?: undefined): string;
   encodeFunctionData(
@@ -51,15 +48,10 @@ interface MinterV0Interface extends ethers.utils.Interface {
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "removeFactory",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
     functionFragment: "removeMinter",
     values: [string]
   ): string;
 
-  decodeFunctionResult(functionFragment: "addFactory", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "addMinter", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "engine", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "factories", data: BytesLike): Result;
@@ -70,10 +62,6 @@ interface MinterV0Interface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "isMinter", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "isVault", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "removeFactory",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(
     functionFragment: "removeMinter",
     data: BytesLike
@@ -126,11 +114,6 @@ export class MinterV0 extends BaseContract {
   interface: MinterV0Interface;
 
   functions: {
-    addFactory(
-      _factory: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
     addMinter(
       _minter: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -152,21 +135,11 @@ export class MinterV0 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    removeFactory(
-      _index: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
     removeMinter(
       _minter: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
-
-  addFactory(
-    _factory: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
 
   addMinter(
     _minter: string,
@@ -189,19 +162,12 @@ export class MinterV0 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  removeFactory(
-    _index: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
   removeMinter(
     _minter: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    addFactory(_factory: string, overrides?: CallOverrides): Promise<void>;
-
     addMinter(_minter: string, overrides?: CallOverrides): Promise<void>;
 
     engine(overrides?: CallOverrides): Promise<string>;
@@ -220,22 +186,12 @@ export class MinterV0 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    removeFactory(
-      _index: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
     removeMinter(_minter: string, overrides?: CallOverrides): Promise<void>;
   };
 
   filters: {};
 
   estimateGas: {
-    addFactory(
-      _factory: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
     addMinter(
       _minter: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -260,11 +216,6 @@ export class MinterV0 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    removeFactory(
-      _index: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
     removeMinter(
       _minter: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -272,11 +223,6 @@ export class MinterV0 extends BaseContract {
   };
 
   populateTransaction: {
-    addFactory(
-      _factory: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
     addMinter(
       _minter: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -307,11 +253,6 @@ export class MinterV0 extends BaseContract {
     mint(
       _to: string,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    removeFactory(
-      _index: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

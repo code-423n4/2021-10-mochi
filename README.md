@@ -216,7 +216,42 @@ Also, while using the oracle, we are facing issue while querying price data of R
 
 ### :desktop_computer: How to setup the contract dev environment
 
-`npm install`
+for every repository, setup the environment first
+
+`cp .env.example .env`
+
+and fill the environment variables
+
+```
+ETHERSCAN_API_KEY=
+MAINNET_RPC_URL=
+MAINNET_FORK_BLOCK=
+MAINNET_PRIVATE_KEY=
+RINKEBY_RPC_URL=
+RINKEBY_FORK_BLOCK=
+RINKEBY_PRIVATE_KEY=
+```
+**mochi-library**
+```
+$ cd projects/mochi-library
+$ npm install
+```
+
+**mochi-core**
+```
+$ cd projects/mochi-library
+$ npm install
+$ cd ../mochi-core
+$ npm install
+```
+
+**mochi-cssr**
+```
+$ cd projects/mochi-library
+$ npm install
+$ cd ../mochi-cssr
+$ npm install
+```
 
 ### :question: How to run tests
 
