@@ -43,25 +43,25 @@ By using CSSR, Mochi can use any tokens with appropriate liquidity on dexes to e
 ## :mag: Smart Contract Overview
 ### :globe_with_meridians: Core
 - :gear: MochiEngine.sol
-    - sloc : TBD
+    - sloc : 94
     - This contract is where all contracts(componenets) are connected. Contract addresses are registered and modified through governance.
 - :page_facing_up: MochiProfileV0.sol
-    - sloc : TBD
+    - sloc : 283
     - This contract is the contract that is reponsible of storing asset's stability fee, credit cap, etc...
 - 🈹NoDiscountProfile.sol
-    - sloc : TBD
+    - sloc : 11
     - This contract does nothing now but will be giving out discount info when we have the discount event scheduled.
 - :moneybag: Usdm.sol
-    - sloc : TBD
+    - sloc : 77
     - This represents stable coin(ERC20) minted while borrowing through `MochiVault`. Flash minting is supported. Minting can only be executed through `USDMMinter`
 - :pick: USDMMinter.sol
-    - sloc : TBD
+    - sloc : 56
     - `USDM` can only be minted through this contract. Initially, any vaults deployed through `MochiVaultFactory` can execute mint function.
 - :sparkles: MochiNFT.sol
-    - sloc : TBD
+    - sloc : 59
     - Every nft represents a position of debt. when user deposit/withdraw/borrow/repay through `MochiVault`, it actually means the action occurs in position. Every action of `MochiVault` requires NFT position. NFT minting should only be able through `MochiVault` deployed through `MochiVaultFactory`.
 - :lock: MochiVault.sol
-    - sloc : TBD
+    - sloc : 374
     - Vault is deployed per asset(ex. usdc, dai, yfi, weth, ...). And every vault is actually a minimal beacon proxy deployed through `MochiVaultFactory` to reduce deployment cost.
     - functions
         > **notice** executing any of the functions below should invoke fee accuration
@@ -79,10 +79,10 @@ By using CSSR, Mochi can use any tokens with appropriate liquidity on dexes to e
         - liquidate
             - when collateral ratio goes over liquidation ratio, it can be in liquidatable status, it can be liquidated through `liquidate` function. this should be done by, repaying debt on behalf of position and get the collateral. this can only be called through `DucthAuctionLiquidator`
 - :factory:	MochiVaultFactory.sol
-    - sloc : TBD
+    - sloc : 58
     - This is the contract that deploys minimal beacon proxy that uses `MochiVault` as template.
 - :hammer: DutchAuctionLiquidator.sol
-    - sloc : TBD
+    - sloc : 124
     - This is the contract that can call the `liquidate` function for vaults. DutchAuctionLiquidator has two steps for liquidation. (1) trigger (2) settle. (1) trigger will start the dutch auction for liquidation, (2) settle will be done through buying out the dutch auction. buyout price is calcualted throught simple linear 
 ### :money_with_wings: CSSR
 CSSR is composed of 3 parts
@@ -92,29 +92,29 @@ CSSR is composed of 3 parts
 
 #### 🛤 Router
 - MochiCSSRV0.sol
-    - sloc : TBD
+    - sloc : 138
     - Router for whole cssr system. This contract should know what adapter it should use for given token address. If it doesn't know, it should query to default price source.
 
 #### Adapter
 - ChainlinkAdapter.sol
-    - sloc : TBD
+    - sloc : 75
     - Adapter for querying price for chainlink listed tokens. Simply queries chainlink price feed and converts to `float` type
 - SushiswapV2LPAdapter.sol
-    - sloc : TBD
+    - sloc : 118
     - Adapter for querying price for sushiswap lp tokens. Price should be calcualted by querying the current underlying tokens in lp pool.
 - UniswapV2LPAdapter.sol
-    - sloc : TBD
+    - sloc : 118
     - Adapter for querying price for Uniswap v2 lp tokens. Price should be calcualted by querying the current underlying tokens in lp pool.
 - UniswapV2TokenAdapter.sol
-    - sloc : TBD
+    - sloc : 227
     - Adapter for querying simple erc20 tokens. Uses SushiswapV2CSSR, UniswapV2CSSR to query the exchange ratio between given token and key currencies(weth, wbtc, usdc, dai) and queries router for key currency price to calculate the given token's price. * althought this is named UniswapV2TokenAdapter, it uses both uni/sushi pool to query the price.
 
 #### Source
 - SushiswapV2CSSR.sol
-    - sloc : TBD
+    - sloc : 248
     - Price source to query the exchange ratio in certain sushiswap lp pool. Relies heavily on [Keydonix Oracle](https://github.com/Keydonix/uniswap-oracle) for code logics. Most changes are for transpiling the code to fix compile issues with solidity 0.8.x . **Currently experiencing weird bug with `invalid extension node` while fetching exchange ratio for Ren token(0x408e41876cccdc0f92210600ef50372656052a38) which does not happens on original Keydonix oracle**
 - UniswapV2CSSR.sol
-    - sloc : TBD
+    - sloc : 248
     - Price source to query the exchange ratio in certain uniswap v2 lp pool. Relies heavily on [Keydonix Oracle](https://github.com/Keydonix/uniswap-oracle) for code logics. Most changes are for transpiling the code to fix compile issues with solidity 0.8.x .
 
 ### :fire: Potential Concerns
