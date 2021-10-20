@@ -21,7 +21,6 @@ This repo will be made public before the start of the contest. (C4 delete this l
     - [How to setup the contract dev environment](#desktop_computer-how-to-setup-the-contract-dev-environment)
     - [How to run tests](#question-how-to-run-tests)
 
-
 | Glossary| |
 |-------------------------------|------------------------------------------------------|
 | USDM | 1$ tragetting stable coin minted through MochiVault |
