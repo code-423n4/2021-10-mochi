@@ -75,20 +75,6 @@ describe.only('MochiEngine', function () {
           );
         });
       });
-
-      describe('migrate', function(){
-        it('should be able to mint', async function () {
-          await vault.mint(owner.getAddress(), ethers.constants.AddressZero);
-          await vault.mint(alice.getAddress(), ethers.constants.AddressZero);
-          await vault.mint(bob.getAddress(), ethers.constants.AddressZero);
-          const NftMigrated = await ethers.getContractFactory("MochiNFTMigrated");
-          const migrated = await NftMigrated.deploy(mochi.engine.address);
-          await mochi.engine.connect(owner).changeNFT(migrated.address);
-          await migrated.connect(owner).migrateFrom(mochi.nft.address);
-          await migrated.connect(owner).migrateToken(3);
-          await vault.mint(bob.getAddress(), ethers.constants.AddressZero);
-        });
-      });
       describe('deposit', function () {
         it('should be able to deposit', async function () {
           await vault.mint(owner.getAddress(), ethers.constants.AddressZero);
