@@ -37,7 +37,6 @@ import {
   MochiTreasuryV0__factory,
   MochiVaultFactory__factory,
   MochiNFT__factory,
-  MochiNFTMigrated__factory,
 } from './types';
 
 interface AuctionDetail {
@@ -223,18 +222,6 @@ export class MochiCore {
       this.engine.address,
     );
 
-    await this.engine.connect(this.deployer).changeNFT(this.nft.address);
-  }
-
-  async deployMigrationNft() {
-    const migrated = await new MochiNFTMigrated__factory(this.deployer).deploy(
-      this.engine.address,
-    );
-
-    this.nft = MochiNFT__factory.connect(
-      migrated.address,
-      this.provider,
-    );
     await this.engine.connect(this.deployer).changeNFT(this.nft.address);
   }
 
