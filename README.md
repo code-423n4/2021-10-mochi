@@ -7,8 +7,6 @@
 - Starts October 21, 2021 00:00 UTC
 - Ends October 27, 2021 23:59 UTC
 
-This repo will be made public before the start of the contest. (C4 delete this line when made public)
-
 ## Contents
 - [Contest Scope](#runner-contest-scope)
 - [Protocol Overview](#bookmark_tabs-protocol-overview)
