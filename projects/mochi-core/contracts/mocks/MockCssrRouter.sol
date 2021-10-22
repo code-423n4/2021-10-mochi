@@ -11,7 +11,6 @@ import "@mochifi/cssr/contracts/cssr/SushiswapV2CSSR.sol";
 import "@mochifi/cssr/contracts/adapter/ChainlinkAdapter.sol";
 import "@mochifi/cssr/contracts/adapter/UniswapV2TokenAdapter.sol";
 import "@mochifi/cssr/contracts/adapter/UniswapV2LPAdapter.sol";
-import "@mochifi/cssr/contracts/adapter/SushiswapV2TokenAdapter.sol";
 import "@mochifi/cssr/contracts/adapter/SushiswapV2LPAdapter.sol";
 
 contract MockCssrRouter is ICSSRRouter {
